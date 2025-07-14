@@ -4,11 +4,19 @@ A bash script to detect suspicious open ports (e.g., 23, 445, 3389) and connecti
 
 ## Usage
 1. Ensure `config.sh` with `SUSPICIOUS_PORTS`, `MALICIOUS_IPS_FILE`, and `ALERTS_LOG`.
-2. Run:
+2. Populate `malicious_ips.txt` with IPs from [AbuseIPDB](https://www.abuseipdb.com) (API with 90%+ confidence score).
+   ```bash
+   curl -G https://api.abuseipdb.com/api/v2/blacklist \
+   -d confidenceMinimum=90 \
+   -d plaintext \
+   -H "Key: YOUR_API_KEY" \
+   -H "Accept: text/plain" > malicious_ips.txt
+   ```
+3. Run:
    ```bash
    sudo ./network_scan.sh
    ```
-3. Check alerts in the log file.
+4. Check alerts in the log file.
 
 ## Dependencies
 - ss or netstat, grep.
