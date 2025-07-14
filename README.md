@@ -1,10 +1,10 @@
 # Network Scanner
 
-A bash script to detect suspicious open ports (e.g., 23, 445, 3389) and connections to known malicious IPs listed in `malicious_ips.txt`. Alerts are logged to a specified file.
+A bash script to detect suspicious open ports (e.g., 23, 445, 3389) and connections to known malicious IPs listed in your `malicious_ips_file`. Alerts are logged to a specified file.
 
 ## Usage
 1. Ensure `config.sh` with `SUSPICIOUS_PORTS`, `MALICIOUS_IPS_FILE`, and `ALERTS_LOG`.
-2. Populate `malicious_ips.txt` with IPs from [AbuseIPDB](https://www.abuseipdb.com) (API with 90%+ confidence score).
+2. Populate `malicious_ips_file` with IPs from [AbuseIPDB](https://www.abuseipdb.com) (API with 90%+ confidence score).
    ```bash
    curl -G https://api.abuseipdb.com/api/v2/blacklist \
    -d confidenceMinimum=90 \
