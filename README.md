@@ -26,3 +26,5 @@ A bash script to detect suspicious open ports (e.g., 23, 445, 3389) and connecti
    [2025-07-11 11:17:00] ALERT: Suspicious port 445 open
 [2025-07-11 11:17:00] ALERT: Connection to known malicious IP 192.168.1.30 detected
    ```
+## Notes
+- Uses AbuseIPDB’s blacklist API for malicious IPs.
